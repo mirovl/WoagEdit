@@ -23,8 +23,10 @@ def st():
     StartGame()
 def StartGame():
     #os.system(game)
-    subprocess.call(f"PizzaTower2.exe {params.get()}")
-    exit()
+    if params.get() == "":
+        subprocess.call("PizzaTower2.exe")
+    else:
+        subprocess.call(f"PizzaTower2.exe {params.get()}")
 
 def OpenFolder():
     os.startfile(f"{appdata1}/PizzaTower_GM2")
